@@ -21,7 +21,7 @@ export const Movies = ({ dataMovies, changePage, setChangePageMovie }) => {
     const handleGetMovieSearch = async (event) => {
         event.preventDefault();
         if (searchUser == 0) {
-            setError('Erro, digite umm nome válido.'); 
+            setError('Erro, digite um nome válido.'); 
             return 
         }
         try {
