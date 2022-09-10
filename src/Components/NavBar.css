@@ -1,0 +1,42 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+nav h2 > a {
+    filter: drop-shadow(0 0 0.4em #ffffff36);
+    color: #c81414;
+    font-size: 3em;
+}
+
+nav h2 > a:hover {
+    filter: drop-shadow(0 0 0.4em #c8141415);
+    color: #ffffffe9;
+}
+
+nav a {
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    margin: 0 20px;
+    transition: .3s;
+}
+
+.active {
+    background-color: #d83131;
+    color: rgb(240, 236, 236);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+@media screen and (max-width: 500px) {
+    nav {
+        padding: 20px 10px;
+    }
+    nav h2 > a {
+        font-size: 1.7em;
+    }
+}
