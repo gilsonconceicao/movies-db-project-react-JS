@@ -3,38 +3,36 @@ import { useParams } from 'react-router-dom'
 
 import styles from './InfoMovie.module.css'
 
-const InfoMovie = ({page}) => {
-  const {id} = useParams(); 
-  const [getMovies, setGetMovieId] = useState({}); 
-  const [genere, setGenere] = useState([]); 
-  const [getProduction, setGetProduction] = useState([]); 
-  const [error, setError] = useState(null); 
+const InfoMovie = ({ page }) => {
+  const { id } = useParams();
+  const [getMovies, setGetMovieId] = useState({});
+  const [genere, setGenere] = useState([]);
+  const [getProduction, setGetProduction] = useState([]);
+  const [error, setError] = useState(null);
 
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=6faa5e90a21586090d2be6f3b012f543&language=en-US`
- 
-    const getDataMovies = async () => {
-      try {
-        useEffect(() => {
 
-          const GetDataUrlSearch = async () => {
+  const getDataMovies = async () => {
+    try {
+      useEffect(() => {
 
-            const response = await fetch(url)
-            const dataResponse = await response.json()
+        const GetDataUrlSearch = async () => {
 
-            setGetMovieId(dataResponse); 
-            /* Get data details for specific information */
-            setGenere(dataResponse.genres.map(nameMovie => nameMovie.name));
-            setGetProduction(dataResponse.production_companies.map(nameMovie => nameMovie.name));
-          }
-          GetDataUrlSearch(); 
-        }, [])
-      } catch (error) {
-          console.log(error); 
-      }
+          const response = await fetch(url)
+          const dataResponse = await response.json()
+
+          setGetMovieId(dataResponse);
+          /* Get data details for specific information */
+          setGenere(dataResponse.genres.map(nameMovie => nameMovie.name));
+          setGetProduction(dataResponse.production_companies.map(nameMovie => nameMovie.name));
+        }
+        GetDataUrlSearch();
+      }, [])
+    } catch (error) {
+      console.log(error);
     }
-
-    getDataMovies()
-
+  }
+  getDataMovies();
 
   return (
     <div className={styles['container_about_movie']}>

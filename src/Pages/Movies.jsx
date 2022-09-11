@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
 import {AiFillPlayCircle} from 'react-icons/ai'; 
 //routers
-import loadingGif from '../assets/gif/loading_request.gif'
+import loadingGif from '../assets/gif/loading_request.gif';
 import { Link } from 'react-router-dom';
 import './Movies.css';
 
@@ -25,7 +25,7 @@ export const Movies = ({ dataMovies, changePage, setChangePageMovie }) => {
             return 
         }
         try {
-            setMessageSearch('')
+            setMessageSearch('');
             setLoading(true); 
 
             const response = await fetch(url); 
@@ -40,13 +40,11 @@ export const Movies = ({ dataMovies, changePage, setChangePageMovie }) => {
 
         } catch (error) {
             setError('Error')
-        }
-
-        
+        }        
     }
 
     console.log(getMovie)
-    return (
+    return ( 
         <div>
             <div className="header_of_page">
                 <div>
